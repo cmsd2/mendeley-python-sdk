@@ -19,3 +19,5 @@ class MendeleyApiException(MendeleyException):
             return self.rsp.json()['message']
         except ValueError:
             return self.rsp.text
+        except KeyError:
+            return self.rsp.text
